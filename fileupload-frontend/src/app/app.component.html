@@ -1,0 +1,17 @@
+<div class="container">
+  <h1><a href="./">{{title}}</a></h1>
+  <br>
+    <form id='formData' #formdata method="post" enctype="multipart/form-data">
+      <input id="file" #data type="file" name="file" (change)="getFiles(data)">
+      <br>
+      <input #upload type="submit" value="Upload" class="btn btn-info pull-left" (click)="postfile();">
+    </form>
+    <div *ngIf="successMsg">
+      <h4 class="text-success">{{successMsg}}</h4>
+    </div>
+    <div *ngIf="errorMsg">
+      <h4 class="text-danger">{{errorMsg}}</h4>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
